@@ -5,21 +5,12 @@
 #
 
 # @lc code=start
-    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        list1=[]
-        q=deque()
-        q.append(root)
-        while q:
-            level=[]
-            for i in range(len(q)):
-                poping=q.popleft()
-                if poping:
-                    level.append(poping.val)
-                    q.append(poping.left)
-                    q.append(poping.right)
-            if level:
-                list1.append(level)
-        return list1
+class Solution:
+    def findNonMinOrMax(self, nums: List[int]) -> int:
+        if len(nums) <= 2:
+            return -1
+        nums.sort()
+        return nums[1]
         
 # @lc code=end
 
