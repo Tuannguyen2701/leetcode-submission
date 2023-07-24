@@ -10,9 +10,10 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        for i in range(k):
-            a = nums.pop(-1)
-            nums.insert(0, a)
+        k %= len(nums)
+        re = nums[-k:]
+        re.extend(nums[:-k])
+        for i in range(len(nums)): nums[i] = re[i]
            
         
 # @lc code=end
